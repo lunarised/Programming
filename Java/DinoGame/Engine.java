@@ -14,7 +14,11 @@ public class Engine{
 
 	frame.setIconImage(iconImage);
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.pack();
+	JPanel panel = new JPanel();
+	frame.setSize(300, 300);
+	panel.setBackground(Color.cyan);
+	frame.getContentPane().add(panel);
+//	frame.pack();
        frame.setVisible(true);	
 	}
 
