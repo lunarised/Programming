@@ -1,5 +1,5 @@
 <h1> Howdy </h1>
-<p> My name is James McKenzie and this is my Git Repository where i work on
+<p> My name is Lunarised and this is my Git Repository where i work on
 some programming exersises.</p>
 <h2> What Languages do i use? </h2>
 <p>I am currently learning how to effectively use C89, with the goal of using it as my main language
