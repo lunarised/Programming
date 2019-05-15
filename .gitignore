@@ -1,0 +1,11 @@
+*
+!*/
+!*.c
+!*.h
+!*.md
+!.gitignore
+!*.java
+!*.cpp
+!*.bas
+!*.cs
+!*.pl
