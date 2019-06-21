@@ -1,7 +1,8 @@
 #!/bin/ruby
 module Game
 	module_function
-	DIFFICULTY = 10
+	DIFFICULTY = 1
+	
 	def checkResults(user, mastermind)
 
 	end
@@ -13,15 +14,21 @@ module Game
 		gets.chomp			#Reads User Input
 	end				#Returns the result of gets
 	def run
+		correct = true
 		guesses = 0
 		until guesses == DIFFICULTY	
 			ui = userInput(prompt: "What is my name")
 			if StringValidator.run(ui)
 			guesses += 1
-			
+			puts "Valid Guess"
 			else
-				puts "invalid input"
+			puts "Bad Guess"
 			end
+		end
+		if correct
+		puts "Congratulations! you win mastermind"
+		else
+		puts "Oof Ya Dingus! You didn't get it!"
 		end
 	end
 end
@@ -34,17 +41,16 @@ module StringValidator
 		instring =~ /^[A-Za-z]+$/	
 	end
 	def duplicateChecker(instring)
-		dsucc = true
-		dsucc = false if instring.each_char.find{|c| instring.count(c)>1}
-	dsucc
+		instring.chars == instring.chars.uniq
 	end
-	def run(instring)
-		succ = false		
-		if stringLenCheck(instring) and stringContentCheck(instring) and duplicateChecker(instring)
-			succ =  true
-		end
-	succ
+	def run(_instring)
+		instring = _instring.downcase
+		stringLenCheck(instring) && stringContentCheck(instring) && duplicateChecker(instring)
 	end
 end
-
+module WordGetter
+	def run
+	
+	end
+end
 Game.run
