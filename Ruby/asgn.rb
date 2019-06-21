@@ -11,17 +11,17 @@ class Game
 		puts prompt if prompt 	#Prints out the Prompt
 		gets			#Reads User Input
 	end				#Returns the result of gets
-	guesses = 0
-	until guesses == DIFFICULTY
-	
-		userInput(prompt: "What is my name")
-		guesses++
+	def run
+		guesses = 0
+		until guesses == DIFFICULTY	
+			userInput(prompt: "What is my name")
+			guesses++
+		end
 	end
-
 end
 class StringCheck
 
 
 end
 
-Game
+Game.run
