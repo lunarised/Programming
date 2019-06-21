@@ -21,14 +21,21 @@ class Game
 end
 class StringValidator
 	def stringLenCheck(instring)
-		if instring.length != 5
-			return 0
-		end
+		instring.length==5
 	end
 	def stringContentCheck(instring)
-	
+		succ = true
+		characters = instring.split('')
+		chars.each{ |c|
+			unless letter?(c)	
+				succ = false;
+			end
+		}
+	succ	
 	end
-	
+	def letter?(letter)
+  		letter =~ /[A-Za-z]/
+	end
 end
 
 Game.run
