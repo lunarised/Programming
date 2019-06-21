@@ -6,22 +6,29 @@ class Game
 	end
 
 
-	def userInput(prompt: "")	#Takes an optional prompt which will be stored in prompt. In this case
+	def self.userInput(prompt: "")	#Takes an optional prompt which will be stored in prompt. In this case
 					#I will use as a prompt
 		puts prompt if prompt 	#Prints out the Prompt
 		gets			#Reads User Input
 	end				#Returns the result of gets
-	def run
+	def self.run
 		guesses = 0
 		until guesses == DIFFICULTY	
 			userInput(prompt: "What is my name")
-			guesses++
+			guesses += 1
 		end
 	end
 end
-class StringCheck
-
-
+class StringValidator
+	def stringLenCheck(instring)
+		if instring.length != 5
+			return 0
+		end
+	end
+	def stringContentCheck(instring)
+	
+	end
+	
 end
 
 Game.run
