@@ -16,6 +16,12 @@ module Game
 	def run
 		correct = true
 		guesses = 0
+		masterKey = WordGetter.run
+		puts masterKey
+		until StringValidator.run(masterKey)
+			masterKey = WordGetter.run
+		end
+		puts masterKey
 		until guesses == DIFFICULTY	
 			ui = userInput(prompt: "What is my name")
 			if StringValidator.run(ui)
@@ -49,8 +55,9 @@ module StringValidator
 	end
 end
 module WordGetter
+	module_function
 	def run
-	
+		File.readlines("mastermindWordList.txt").sample	
 	end
 end
 Game.run
