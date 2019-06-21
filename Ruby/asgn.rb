@@ -8,13 +8,12 @@ module Game				#I am using modules, as no objects will be created i this game
 		gets.chomp		#Reads User Input
 	end				#Returns the result of gets
 	def compare(instring, _masterKey)	#The method that compares the guess with the masterKey
-		cor = false			#assume its a false guess until proven true
 		result = "XXXXX"		#assume all results are wrong
-		for x in 0..4			#for each of the letters in the strings (5) 0 and 4 are inclusive
-			result[x]= "U" if _masterKey.upcase.index(instring[x].upcase) != nil 	#set the result to a U (Correct Letter, Wrong Spot) if the letter in position X exists in both strings
+		(0..4).each do |x|			#for each of the letters in the strings (5) 0 and 4 are inclusive
+			result[x]= "U" unless _masterKey.upcase.index(instring[x].upcase).nil? 	#set the result to a U (Correct Letter, Wrong Spot) if the letter in position X exists in both strings
 			result[x] = "O" if instring[x].upcase == _masterKey[x].upcase	#set the result to a O if its in the correct place with the correct letter
 		end			#There are probably more efficient ways to do this, But im not using them
-		cor = true if result == "OOOOO"	#Set it as a correct guess, if the result string is all Correct Letter, Correct Spot
+		cor = result == "OOOOO"	#Set it as a correct guess, if the result string is all Correct Letter, Correct Spot
 		puts result unless cor	#Prints the result if you didn't get a correct guess
 		cor			#returns whether the result was correct or not
 	end				
@@ -43,10 +42,8 @@ module Game				#I am using modules, as no objects will be created i this game
 			puts "Oof Ya Dingus! You didn't get it!"	#show the loss state
 		end
 		ui = userInput(prompt: "Do you want to play again? [Y]/n") #ask them if they want to play again. Defaults to yes, unless they type "n"
-		if ui.downcase == "n"			#if they type exactly n or N
-			return false			#stop the game by stoping the whileloop outside the program
-		end	
-	true						#else, return true, Keeping the while loop working
+		return false if ui.downcase == "n"		#return false if they type N or n
+		true						#else, return true, Keeping the do loop working
 	end
 	
 end
@@ -78,6 +75,7 @@ puts "The objective is to guess the word generated in a set number of gos!"
 puts "X = Incorrect Guess, O = Correct Place Correct Guess, U = Correct Guess, Wrong Place"
 puts "Words are 5 alpha characters long, with no duplicate letters!"
 puts "Have Fun!"
-while Game.run #While the player hasnt chosen to exit the game (See above)
+loop do
+	break unless Game.run #While the player hasnt chosen to exit the game (See above)
 end
 
