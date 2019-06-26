@@ -8,4 +8,4 @@ module LineRead
 end
 
 post = LineRead.run.chomp
-system("echo "+ post +"")
+system("toot post \""+ post +"\"")
