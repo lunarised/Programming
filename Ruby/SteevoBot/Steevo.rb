@@ -8,4 +8,6 @@ module LineRead
 end
 
 post = LineRead.run.chomp
+system("toot activate Steevo@welovela.in")
 system("toot post \""+ post +"\"")
+system("echo "+post+"");
