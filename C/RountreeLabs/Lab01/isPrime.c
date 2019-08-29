@@ -16,7 +16,7 @@ int main(void){
 	clock_t se, ss;
 	int n = 2;
 	ss = clock();
-	for (n = 2; n < 100000; n++){
+	for (n = 2; n < 1000000; n++){
 		if(is_prime(n)){
 			printf("%d\n", n);
 		}
