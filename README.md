@@ -7,3 +7,11 @@ for any imperative programming. I am also rather proficient in Java, C# and C++.
 <h2> Current Projects </h2>
 <p>My Current Projects are to rewrite most of my university exercises to a point where i am happy with them, and also to work on any given tasks for my BIT</p>
 
+<h2> Currently Learning </h2>
+<ul>
+  <li> Ansi - C </li>
+  <li> Perl </li>
+  <li> Scheme </li>
+  <li> Rust </li>
+  <li> Idris </li>
+ </ul>
