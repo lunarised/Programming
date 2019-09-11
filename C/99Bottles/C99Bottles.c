@@ -30,6 +30,6 @@ int rMethod(int _bottle){
 	return EXIT_FAILURE;	
 }
 int main(void){
-	rMethod(10);
+	rMethod(1000);
 	return EXIT_SUCCESS;
 }
