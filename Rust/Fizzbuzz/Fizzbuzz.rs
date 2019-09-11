@@ -1,5 +1,19 @@
+use std::io;
+
+use std::io::prelude::*;
 fn main(){
-    fizzbuzz(1000);
+    print!("Input the FizzBuzz Cap: ");
+    io::stdout().flush();
+    let mut inputText = String::new();
+    io::stdin()
+        .read_line(&mut inputText)
+        .expect("failed to read from stdin");
+
+    let trimmed = inputText.trim();
+    match trimmed.parse::<i32>() {
+        Ok(i) => fizzbuzz(i),
+        Err(..) => println!("Given input: {} was not an integer", trimmed),
+}
 }
 fn fizzbuzz(_max: i32){
     for x in 0.._max {
