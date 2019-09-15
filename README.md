@@ -40,3 +40,24 @@ for any imperative programming. I am also rather proficient in Java, C# and C++.
 	<li>C++ 11</li>
 	<li>C# </li>
 </ul>
+<h2> Java </h2>
+<p> I spend many years of my degree taming Java to my liking, enough so
+that it is one of the fastest languages for me to do a mockup program in.</p>
+	
+<p>While I do not use many of the OO Principles Java has to offer, I still use it for
+its platform capability and its inheritance model </p>
+
+<h2> Python </h2>
+<p> Ive done my fair share of computing and mathematical analysis with this language with
+a dabble of Genetic Algorithms and OO python thrown in for good measure. Not my goto language,
+ mainly due to its styling, but hey. Its not the worst one out there atleast! </p>
+ 
+ <h2> C# </h2>
+ <p> For all my graphical interface needs for windows systems, I use C#. Not much to say
+ Its fast enough for my purposes, although, as i seldom run windows, I find myself writing
+ in it less and less </p>
+ 
+ <h2> C++ </h2>
+ <p> Although this language is heavily disliked by my programming hero, Richard O'Keefe, I still
+use it a little, as its just Java without as many restrictions. Ive built a few roguelikes and puzzles
+in this language using .net.  Its far from my favorite language but i try to keep upto date with it </p>
