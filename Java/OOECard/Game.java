@@ -11,8 +11,9 @@ class Game{
 
     public static void main(String[] args){
         initState();
-        String inp = sc.nextLine();
-        playerSide = inp.charAt(0);
+
+
+
         System.out.println(playerSide);
         
         
@@ -22,8 +23,27 @@ class Game{
         emperorsHand = new Hand('E', HANDSIZE);
         slaveHands = new Hand[PLAYERS-1];
         for (int i=0; i<PLAYERS -1; i++){
-            slaveHands[i] = new Hand('S', HANDSIZE);
+            slaveHands[i] = new Hand('S', HANDSIZE);  
         }
         sc = new Scanner(System.in);
+        boolean validInput = false;
+        while(!validInput){
+        System.out.print("What Side do you wish to start on? [S/E]: ");
+        String inp = sc.nextLine();
+        char pToProcess = Character.toUpperCase(inp.charAt(0));
+        switch(pToProcess){
+            case 'E':
+                validInput = true;
+                break;
+            case 'S':
+                validInput = true;
+                break;
+            default :
+                validInput = false;
+                System.out.println("Invalid input!");
+        }
+        playerSide = pToProcess;
+        }
+
     }
 }
