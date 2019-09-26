@@ -1,6 +1,4 @@
-import java.util.Scanner;
 public class InsertionSort{
-
 	public static void main(String[] args){
 	System.out.println("Hello World");
 	int[] unsorted = new int[]{22,6969,420,2,1};
@@ -21,6 +19,4 @@ public class InsertionSort{
 	}
 	System.out.print("\n");
 	}
-
 	}
-

@@ -11,12 +11,7 @@ class Game{
 
     public static void main(String[] args){
         initState();
-
-
-
-        System.out.println(playerSide);
-        
-        
+        System.out.println(playerSide);        
         System.out.println(slaveHands[0].getCardAt(4));
     }
     public static void initState(){
