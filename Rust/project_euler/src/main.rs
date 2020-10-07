@@ -1,5 +1,5 @@
 fn main() {
-    println!("{}", euler_2(1,2, 4_000_000));
+    println!("{}", euler_5(10));
 }
 fn euler_1(max_number :i64) -> i64{
     let mut sum = 0;
@@ -36,3 +36,26 @@ fn euler_2(start_1 :i64, start_2 :i64, cap :i64) -> i64
     }
     return sum;
 }
+
+
+/* Broken
+fn euler_5(max_in: i64) -> i64{
+    let max: usize = max_in as usize;
+    let mut trace: [usize; 11] = [0; 11];
+    let mut sum = 0;
+    for n in 1..max+1{
+        println!("{}", n);
+        if trace[n] == 0{
+            sum += n;
+            let mut i = 1;
+            while (i*(n+1) < max+1){
+                trace[i*n] = 1;
+                i += 1;
+                println!("{}", i);
+            }
+        }
+
+    }
+    return sum as i64;
+}
+*/
