@@ -1,9 +1,10 @@
-use std::env;
 use std::fs;
-use std::fs::File;
-use std::str::SplitWhitespace;
+use std::time::Instant;
 fn main() {
+    let start = Instant::now();
     println!("{:?}", find_length_difference_with_same_value());
+    let duration = start.elapsed();
+    println!("Time elapsed in expensive_function() is: {:?}", duration);
 }
 fn letter_value_sum(input_string: &str) -> u32 {
     let mut sum: u32 = 0;
@@ -32,23 +33,38 @@ fn get_words_list() -> String {
     return contents;
 }
 
-fn find_length_difference_with_same_value() -> Vec<String> {
-    let mut vec = Vec::new();
+
+fn find_length_difference_with_same_value() -> Vec<String>{
+    let mut values = Vec::new();
+   let mut buckets = Vec::new();
     let contents = get_words_list();
     let word_list = contents.split_whitespace();
-    for word in word_list {
-        let contents2 = contents.clone();
-        let word_list2 = contents2.split_whitespace();
-        for word2 in word_list2 {
-            println!("{}", word2);
-            if word.len() + 11 == word2.len() || word.len() == word2.len() + 11 {
-                if letter_value_sum(word) == letter_value_sum(word2) {
-                    vec.push(word.to_string());
-                    vec.push(word2.to_string());
-                    println!("{} and {}", word, word2);
+    let mut max_value: usize = 0;
+    for word in word_list{
+        if word.len() > max_value{
+            max_value = word.len();
+        }
+    }
+    for _i in 0..max_value{
+        let tmp_handle = Vec::new();
+        buckets.push(tmp_handle)
+
+    }
+    let pass2 = get_words_list();
+    let word_list2 = pass2.split_whitespace();
+    for word in word_list2{
+        buckets[word.len()-1].push(word);
+    }
+    for bucket in 0..max_value-12{
+        println!("{}", bucket);
+        for word in &buckets[bucket]{
+            for word2 in &buckets[bucket+11]{
+                if letter_value_sum(word) == letter_value_sum(word2){
+                    values.push(word.to_string());
+                    values.push(word2.to_string());
                 }
             }
         }
     }
-    return vec;
+    return values;
 }
