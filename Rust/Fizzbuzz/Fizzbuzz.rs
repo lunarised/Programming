@@ -15,7 +15,7 @@ fn main(){
         Err(..) => println!("Given input: {} was not an integer", trimmed),
 }
 }
-fn fizzbuzz(_max: i32){
+fn fizzbuzz(_max: isize){
     for x in 0.._max {
         if x%5 == 0{
             if x%3 == 0{
