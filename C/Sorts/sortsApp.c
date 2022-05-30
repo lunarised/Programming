@@ -4,6 +4,7 @@
 #include <string.h>
 #include <time.h>
 #define LENGTH 100000
+#define SLOWLENGTH 10
 #define ALLOWSLOW 0
 int main() {
   int array[LENGTH];
@@ -17,9 +18,9 @@ int main() {
 
   /* To do, Stooge Sort */
   if (ALLOWSLOW) {
-    int bogoArray[LENGTH];
-    memcpy(bogoArray, array, LENGTH);
-    struct sortStats bogoSortStats = bogoSort(bogoArray, LENGTH);
+    int bogoArray[SLOWLENGTH];
+    memcpy(bogoArray, array, SLOWLENGTH);
+    struct sortStats bogoSortStats = bogoSort(bogoArray, SLOWLENGTH);
     printf("Bogosort: Number of comparasons: %d, Number of permutations: %d, "
            "Time taken: %f\n",
            bogoSortStats.comparasons, bogoSortStats.permutations,
