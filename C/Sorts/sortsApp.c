@@ -1,5 +1,7 @@
 #include "bogo.c"
 #include "bubble.c"
+#include "comb.c"
+#include "sortingUtils/sortingChecking.c"
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
@@ -31,8 +33,17 @@ int main() {
   memcpy(bubbleArray, array, LENGTH);
   struct sortStats bubbleSortStats = bubbleSort(bubbleArray, LENGTH);
   printf("BubbleSort: Number of comparasons: %d, Number of permutations: %d, "
-         "Time taken: %f\n",
+         "Time taken: %f, Correctly Sorted: %d\n",
          bubbleSortStats.comparasons, bubbleSortStats.permutations,
-         bubbleSortStats.timeUsed);
+         bubbleSortStats.timeUsed, isSorted(bubbleArray, LENGTH));
+
+  int combArray[LENGTH];
+  memcpy(combArray, array, LENGTH);
+  struct sortStats combSortStats = combSort(combArray, LENGTH);
+  printf("BubbleSort: Number of comparasons: %d, Number of permutations: %d, "
+         "Time taken: %f, Correctly Sorted: %d\n",
+         combSortStats.comparasons, combSortStats.permutations,
+         combSortStats.timeUsed, isSorted(combArray, LENGTH));
+
   return EXIT_SUCCESS;
 }
