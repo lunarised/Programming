@@ -2,6 +2,8 @@
 #include "./sorts/bogo.c"
 #include "./sorts/bubble.c"
 #include "./sorts/comb.c"
+#include "./sorts/exchange.c"
+#include "./sorts/iCantBelieveItCanSort.c"
 #include "sortingUtils/sortingChecking.c"
 #include <stdio.h>
 #include <string.h>
@@ -58,6 +60,24 @@ int main() {
          "Time taken: %f, Correctly Sorted: %d\n",
          combSortStats.comparasons, combSortStats.permutations,
          combSortStats.timeUsed, isSorted(combArray, LENGTH));
+
+  int exchangeArray[LENGTH];
+  memcpy(exchangeArray, array, LENGTH * sizeof(int));
+  struct sortStats exchangeSortStats = exchangeSort(exchangeArray, LENGTH);
+  printf("ExchangeSort: Number of comparasons: %lld, Number of permutations: "
+         "%lld, "
+         "Time taken: %f, Correctly Sorted: %d\n",
+         exchangeSortStats.comparasons, exchangeSortStats.permutations,
+         exchangeSortStats.timeUsed, isSorted(exchangeArray, LENGTH));
+
+  int iCBICSArray[LENGTH];
+  memcpy(iCBICSArray, array, LENGTH * sizeof(int));
+  struct sortStats iCBICSSortStats = iCantBelieveItCanSort(iCBICSArray, LENGTH);
+  printf("iCBICSSort: Number of comparasons: %lld, Number of permutations: "
+         "%lld, "
+         "Time taken: %f, Correctly Sorted: %d\n",
+         iCBICSSortStats.comparasons, iCBICSSortStats.permutations,
+         iCBICSSortStats.timeUsed, isSorted(iCBICSArray, LENGTH));
 
   return EXIT_SUCCESS;
 }
