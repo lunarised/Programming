@@ -1,12 +1,12 @@
-#include "sortingStructs.c"
+#include "../sortingUtils/sortingStructs.c"
 #include <time.h>
 struct sortStats combSort(int *array, int length) {
   struct sortStats s;
   clock_t start, end;
   double cpu_time_used;
   double shrink = 1.4;
-  int permutations = 0;
-  int comparasons = 0;
+  long long permutations = 0;
+  long long comparasons = 0;
   int hold;
   int gap = length;
   int swapped = 1;

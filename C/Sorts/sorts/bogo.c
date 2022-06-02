@@ -1,5 +1,5 @@
-#include "fisherYates.c"
-#include "sortingStructs.c"
+#include "../sortingUtils/fisherYates.c"
+#include "../sortingUtils/sortingStructs.c"
 #include <time.h>
 
 struct isSortedBogoStruct isSortedBogo(int *arr, int _length) {
@@ -25,8 +25,8 @@ struct sortStats bogoSort(int *array, int length) {
   struct isSortedBogoStruct b;
   struct sortStats s;
   b.isSorted = b.comparasons = 0;
-  int permutations = 0;
-  int comparasons = 0;
+  long long permutations = 0;
+  long long comparasons = 0;
   start = clock();
   while (!b.isSorted) {
     b = isSortedBogo(array, length);

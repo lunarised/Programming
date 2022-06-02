@@ -1,13 +1,13 @@
 #ifndef SORTSTRUCTS
 #define SORTSTRUCTS
 struct sortStats {
-  int permutations;
-  int comparasons;
+  long long permutations;
+  long long comparasons;
   double timeUsed;
 };
 
 struct isSortedBogoStruct {
   int isSorted;
-  int comparasons;
+  long long comparasons;
 };
 #endif /* SORTSTRUCTS */
