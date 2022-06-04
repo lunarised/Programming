@@ -3,6 +3,7 @@
 #include "./sorts/bubble.c"
 #include "./sorts/comb.c"
 #include "./sorts/exchange.c"
+#include "./sorts/gnome.c"
 #include "./sorts/iCantBelieveItCanSort.c"
 #include "sortingUtils/sortingChecking.c"
 #include <stdio.h>
@@ -78,6 +79,15 @@ int main() {
          "Time taken: %f, Correctly Sorted: %d\n",
          iCBICSSortStats.comparasons, iCBICSSortStats.permutations,
          iCBICSSortStats.timeUsed, isSorted(iCBICSArray, LENGTH));
+
+  int gnomeArray[LENGTH];
+  memcpy(gnomeArray, array, LENGTH * sizeof(int));
+  struct sortStats gnomeSortStats = gnomeSort(gnomeArray, LENGTH);
+  printf("GnomeSort: Number of comparasons: %lld, Number of permutations: "
+         "%lld, "
+         "Time taken: %f, Correctly Sorted: %d\n",
+         gnomeSortStats.comparasons, gnomeSortStats.permutations,
+         gnomeSortStats.timeUsed, isSorted(gnomeArray, LENGTH));
 
   return EXIT_SUCCESS;
 }
